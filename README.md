@@ -73,7 +73,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  estrada: ^0.1.0
+  estrada: ^0.9.7
 ```
 
 Then run:
@@ -91,21 +91,3 @@ That’s it. No servers, no DI, no middleware.
 You can freely compose it with any HTTP library, CLI tool, or custom framework.
 
 ---
-
-## 📊 Benchmarks
-
-Example run (100k requests, ~900 routes):
-
-```
-Routes total: 909
-Requests:     100000
-Total:        1533153 μs
-Avg:          15.3 μs (15332 ns) per request
-```
-
----
-
-## 📜 License
-
-MIT © 2025  
-Crafted with ❤️
