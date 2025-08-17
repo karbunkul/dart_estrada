@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:estrada/estrada.dart';
 
 final class Route extends EstradaRoute {
