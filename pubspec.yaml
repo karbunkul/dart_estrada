@@ -1,0 +1,31 @@
+name: estrada
+description: Minimalistic, fast route matcher for Dart (path + query parsing).
+version: 0.9.7
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+repository: https://github.com/karbunkul/dart_estrada
+homepage: https://github.com/karbunkul/dart_estrada
+issue_tracker: https://github.com/karbunkul/dart_estrada/issues
+documentation: https://github.com/karbunkul/dart_estrada#readme
+
+topics:
+  - routing
+  - http
+  - cli
+  - matcher
+
+#screenshots:
+#  - path: assets/estrada_icon.png
+#    description: Estrada logo (Dart-themed)
+#  - path: assets/bench.png
+#    description: Benchmark snapshot
+
+dependencies:
+  meta: ^1.17.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
+  benchmark_harness: ^2.2.2
