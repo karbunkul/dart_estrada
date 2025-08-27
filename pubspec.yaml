@@ -1,6 +1,6 @@
 name: estrada
 description: Minimalistic, fast route matcher for Dart (path + query parsing).
-version: 0.9.7
+version: 0.9.8
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

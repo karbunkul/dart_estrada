@@ -4,6 +4,8 @@ import 'route.dart';
 import 'route_info.dart';
 import 'route_result.dart';
 
+typedef RoutePredicateCallback<T> = bool Function(T route);
+
 /// Internal registry that stores and resolves routes.
 ///
 /// This is the core engine behind [Estrada].
@@ -78,7 +80,10 @@ final class Registry<T extends EstradaRoute> {
   ///
   /// - Returns `null` if no match is found.
   /// - Automatically strips trailing slash (`/`) and parses query parameters.
-  RouteResult<T>? resolve({required String path}) {
+  RouteResult<T>? resolve({
+    required String path,
+    RoutePredicateCallback<T>? predicate,
+  }) {
     final q = path.indexOf('?');
     final hasQuery = q != -1;
 
@@ -94,9 +99,13 @@ final class Registry<T extends EstradaRoute> {
     }
 
     // First filter: only routes that share the same first segment.
-    final node = _registry[count]!.where(
+    var node = _registry[count]!.where(
       (e) => e.segments.first == segments.first,
     );
+
+    if (predicate != null) {
+      node = node.where((e) => predicate.call(e.route));
+    }
 
     final candidates = <RouteInfo<T>>[];
 

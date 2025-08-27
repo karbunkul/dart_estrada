@@ -53,7 +53,7 @@ final class Estrada<T extends EstradaRoute> {
   ///
   /// Returns a [RouteResult] if a matching route is found,
   /// otherwise returns `null`.
-  RouteResult<T>? match(String path) {
-    return _registry.resolve(path: path);
+  RouteResult<T>? match(String path, [RoutePredicateCallback<T>? predicate]) {
+    return _registry.resolve(path: path, predicate: predicate);
   }
 }
